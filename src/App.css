@@ -21,6 +21,7 @@ nav {
 }
 
 .target {
+    overflow: hidden;
     background-color: bisque;
     height: 30px;
     width: 350px;
