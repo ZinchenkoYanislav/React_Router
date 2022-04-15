@@ -1,12 +1,14 @@
-import { Routes, Route } from 'react-router-dom';
-import UserAlboms from './pages/UserAlboms';
-import UserListPage from './pages/UserListPage';
+import { Routes, Route } from "react-router-dom";
+import UserAlbumsPage from "./pages/UserAlbumsPage";
+import UserListPage from "./pages/UserListPage";
+import UserPhotosPage from "./pages/UserPhotosPage";
 
 export default function UsersModule() {
   return (
     <Routes>
-        <Route path='' element={<UserListPage />}></Route>
-        <Route path='10' element={<UserAlboms />}></Route>
+      <Route path="" element={<UserListPage />}></Route>
+      <Route path=":id" element={<UserAlbumsPage />}></Route>
+      <Route path=":id/:photosId" element={<UserPhotosPage />}></Route>
     </Routes>
-  )
+  );
 }
