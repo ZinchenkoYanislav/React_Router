@@ -1,3 +1,4 @@
+import { Box, Container, List } from "@mui/material";
 import React from "react";
 import { useParams } from "react-router-dom";
 import ButtonNavBack from "../../common/components/ButtonNavBack";
@@ -10,10 +11,22 @@ export default function UserAlbumsPage() {
   const albums = useUserAlbums(id);
   const userDetails = useUserDetails(id);
   return (
-  <div>
-    <h2>Albums {userDetails.name}</h2>
-     <UserAlbums albums={albums} userDetails={userDetails} />
-     <ButtonNavBack />
-  </div>
- )
+    <Box>
+      <Container
+        maxWidth="xl"
+        align="center"
+        sx={{ color: "white", bgcolor: "#9c27b0" }}
+      >
+        <h2>Albums {userDetails.name}</h2>
+      </Container>
+      <ButtonNavBack />
+      <Box sx={{ width: "100%", bgcolor: "background.paper" }}>
+        <nav aria-label="secondary mailbox folders">
+          <List>
+            <UserAlbums albums={albums} userDetails={userDetails} />
+          </List>
+        </nav>
+      </Box>
+    </Box>
+  );
 }

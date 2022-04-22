@@ -1,5 +1,6 @@
+import { ListItem, ListItemButton, ListItemText } from "@mui/material";
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function UserAlbums({ albums, userDetails }) {
   const { pathname } = useLocation();
@@ -8,11 +9,11 @@ export default function UserAlbums({ albums, userDetails }) {
     <div>
       {albums.map((item) => {
         return (
-          <div key={item.id}>
-            <Link className="text-decor" to={`${pathname}/${item.id}`}>
-              <div className="target text">{item.title}</div>
-            </Link>
-          </div>
+          <ListItem key={item.id}>
+            <ListItemButton component="a" href={`${pathname}/${item.id}`}>
+              <ListItemText primary={item.title} />
+            </ListItemButton>
+          </ListItem>
         );
       })}
     </div>

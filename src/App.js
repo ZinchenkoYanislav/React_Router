@@ -6,11 +6,11 @@ import NotFound from "./modules/common/components/NotFound";
 import UsersModule from "./modules/users/UsersModule";
 
 import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
   return (
-    <div className="container">
+    <div>
       <Router>
         <Navigation />
         <Routes>

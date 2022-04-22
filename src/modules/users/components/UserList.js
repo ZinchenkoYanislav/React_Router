@@ -1,5 +1,7 @@
+import { ListItem, ListItemText } from "@mui/material";
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import ListItemButton from "@mui/material/ListItemButton";
 
 export default function UserList({ list }) {
   const { pathname } = useLocation();
@@ -7,11 +9,11 @@ export default function UserList({ list }) {
     <div>
       {list.map((item) => {
         return (
-          <div key={item.id}>
-            <Link className="text-decor" to={`${pathname}/${item.id}`}>
-              <div className="target text">{item.name}</div>
-            </Link>
-          </div>
+          <ListItem key={item.id}>
+            <ListItemButton component="a" href={`${pathname}/${item.id}`}>
+              <ListItemText primary={item.name} />
+            </ListItemButton>
+          </ListItem>
         );
       })}
     </div>
